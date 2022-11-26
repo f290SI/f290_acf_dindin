@@ -21,12 +21,7 @@ class CurrenciesPage extends StatelessWidget {
             height: 200,
             width: 200,
             child: LoadingIndicator(
-              indicatorType: Indicator.lineScaleParty,
-              colors: [
-                Colors.red,
-                Colors.orange,
-                Colors.yellow,
-              ],
+              indicatorType: Indicator.ballGridBeat,
             ),
           ));
         }
@@ -58,12 +53,21 @@ class CurrenciesPage extends StatelessWidget {
                       CircleAvatar(child: Text(currency.name.substring(0, 3))),
                   title: Text(currency.name),
                   subtitle: Text.rich(TextSpan(children: [
-                    TextSpan(text: 'Buy: ${currency.buy.toStringAsFixed(2)}'),
-                    TextSpan(
-                        text: ' Sell: ${currency.sell.toStringAsFixed(2)}'),
-                    TextSpan(
-                        text:
-                            ' Variation: ${currency.variation.toStringAsFixed(2)}'),
+                    TextSpan(text: 'Buy: ', children: [
+                      TextSpan(
+                          text: currency.buy.toStringAsFixed(2),
+                          style: const TextStyle(fontWeight: FontWeight.w600))
+                    ]),
+                    TextSpan(text: ' - Sell: ', children: [
+                      TextSpan(
+                          text: currency.sell.toStringAsFixed(2),
+                          style: const TextStyle(fontWeight: FontWeight.w600))
+                    ]),
+                    TextSpan(text: ' - Variation: ', children: [
+                      TextSpan(
+                          text: currency.variation.toStringAsFixed(2),
+                          style: const TextStyle(fontWeight: FontWeight.w600))
+                    ]),
                   ])),
                 ),
               );

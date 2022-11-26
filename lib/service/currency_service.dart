@@ -15,7 +15,7 @@ class CurrencyService {
     'AUD',
     'JPY',
     'CNY',
-    'BTC',
+    'BTC'
   ];
 
   getData() async {
