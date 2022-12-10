@@ -21,7 +21,10 @@ class CurrenciesPage extends StatelessWidget {
             height: 200,
             width: 200,
             child: LoadingIndicator(
-              indicatorType: Indicator.ballGridBeat,
+              colors: [
+                Colors.amberAccent,
+              ],
+              indicatorType: Indicator.lineSpinFadeLoader,
             ),
           ));
         }
@@ -49,8 +52,14 @@ class CurrenciesPage extends StatelessWidget {
                 elevation: 4,
                 margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 child: ListTile(
-                  leading:
-                      CircleAvatar(child: Text(currency.name.substring(0, 3))),
+                  leading: CircleAvatar(
+                      backgroundColor: Colors.amberAccent,
+                      child: Text(
+                        currency.name.substring(0, 3),
+                        style: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      )),
                   title: Text(currency.name),
                   subtitle: Text.rich(TextSpan(children: [
                     TextSpan(text: 'Buy: ', children: [

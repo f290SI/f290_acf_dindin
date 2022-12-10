@@ -36,4 +36,8 @@ class CurrencyService {
 
     return currenciesId.map((id) => Currency.fromMap(currencyMap[id])).toList();
   }
+
+  //TODO: Criar model class Stock para gerenciar as cotacoes de acoes
+  //TODO: Criar metodo para obter Stocks
+
 }
