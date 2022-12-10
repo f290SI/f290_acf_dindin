@@ -25,16 +25,14 @@ class _QueryPageState extends State<QueryPage> {
     Abaixo segue um exemplo de conversao do Real para as demais moedas;
     Note que no momento esta pagina nao esta recebendo uma massa de dados entao ocorrerao varios
     nulls; apos criar o carregamento de dados na pagina; crie as demais funcoes.
-
-    Ao 
   */
 
-  // _converterReal(String quantiaEmReais) {
-  //   var reais = double.parse(quantiaEmReais);
-  //   dolarController.text = (reais / widget.currencies[0].buy).toStringAsFixed(2);
-  //   euroController.text = (reais / widget.currencies[1].buy).toStringAsFixed(2);
-  //   bitCoinController.text = (reais / widget.currencies[2].buy).toStringAsFixed(2);
-  // }
+  _converterReal(String quantiaEmReais) {
+    // var reais = double.parse(quantiaEmReais);
+    // dolarController.text = (reais / widget.currencies[0].buy).toStringAsFixed(2);
+    // euroController.text = (reais / widget.currencies[1].buy).toStringAsFixed(2);
+    // bitCoinController.text = (reais / widget.currencies[2].buy).toStringAsFixed(2);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +50,8 @@ class _QueryPageState extends State<QueryPage> {
             height: 16,
           ),
           TextFieldWidget(
-            callBack: (text) {
-              print(text);
+            callBack: (value) {
+              _converterReal(value);
             },
             icon: FontAwesomeIcons.commentDollar,
             hint: 'Valor em Reais',
