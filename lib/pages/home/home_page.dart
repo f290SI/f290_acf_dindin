@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
           return IndexedStack(index: _selectedIndex, children: [
             CurrenciesPage(currencies: currencies!),
             StocksPage(),
-            QueryPage(),
+            QueryPage(currencies: currencies),
           ]);
         },
       ),

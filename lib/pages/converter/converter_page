@@ -6,8 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class QueryPage extends StatefulWidget {
-  const QueryPage({this.currencies});
-  final List<Currency>? currencies;
+  const QueryPage({required this.currencies});
+  final List<Currency> currencies;
 
   @override
   _QueryPageState createState() => _QueryPageState();
@@ -28,10 +28,10 @@ class _QueryPageState extends State<QueryPage> {
   */
 
   _converterReal(String quantiaEmReais) {
-    // var reais = double.parse(quantiaEmReais);
-    // dolarController.text = (reais / widget.currencies[0].buy).toStringAsFixed(2);
-    // euroController.text = (reais / widget.currencies[1].buy).toStringAsFixed(2);
-    // bitCoinController.text = (reais / widget.currencies[2].buy).toStringAsFixed(2);
+    var reais = double.parse(quantiaEmReais);
+    dolarController.text = (reais / widget.currencies[0].buy).toStringAsFixed(2);
+    euroController.text = (reais / widget.currencies[1].buy).toStringAsFixed(2);
+    bitCoinController.text = (reais / widget.currencies[2].buy).toStringAsFixed(2);
   }
 
   @override
