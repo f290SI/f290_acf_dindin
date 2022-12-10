@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.dark(secondary: Colors.amber.shade200),
         scaffoldBackgroundColor: const Color(0xFF171717),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: Colors.amber.shade200,
           unselectedItemColor: Colors.grey.shade600,
         ),
       ),

@@ -36,6 +36,7 @@ class _QueryPageState extends State<QueryPage> {
 
   @override
   Widget build(BuildContext context) {
+    var color = Theme.of(context).colorScheme.secondary;
     return SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -45,7 +46,7 @@ class _QueryPageState extends State<QueryPage> {
             height: 16,
             width: double.infinity,
           ),
-          Icon(FontAwesomeIcons.searchDollar, color: Colors.amber, size: 100),
+          Icon(FontAwesomeIcons.searchDollar, color: color, size: 100),
           SizedBox(
             height: 16,
           ),

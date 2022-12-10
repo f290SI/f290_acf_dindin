@@ -17,6 +17,8 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var color = Theme.of(context).colorScheme.secondary;
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       child: TextField(
@@ -27,17 +29,17 @@ class TextFieldWidget extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: Colors.white60,
           labelText: hint,
-          labelStyle: const TextStyle(color: Colors.amberAccent),
+          labelStyle: TextStyle(color: color),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(32),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.amberAccent),
+            borderSide: BorderSide(color: color),
             borderRadius: BorderRadius.circular(32),
           ),
           prefixIcon: Icon(
             icon,
-            color: Colors.amberAccent,
+            color: color,
           ),
         ),
       ),
