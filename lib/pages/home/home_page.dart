@@ -42,6 +42,24 @@ class _HomePageState extends State<HomePage> {
             ));
           }
 
+          if (snapshot.hasError) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  FontAwesomeIcons.solidFaceSadTear,
+                  size: 100,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(snapshot.error.toString()),
+                )
+              ],
+            );
+          }
+
           var currencies = snapshot.data;
 
           return IndexedStack(index: _selectedIndex, children: [

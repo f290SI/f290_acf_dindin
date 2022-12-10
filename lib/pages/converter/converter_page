@@ -28,6 +28,7 @@ class _QueryPageState extends State<QueryPage> {
   */
 
   _converterReal(String quantiaEmReais) {
+    if(quantiaEmReais.isEmpty) return;
     var reais = double.parse(quantiaEmReais);
     dolarController.text = (reais / widget.currencies[0].buy).toStringAsFixed(2);
     euroController.text = (reais / widget.currencies[1].buy).toStringAsFixed(2);

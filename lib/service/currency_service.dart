@@ -26,6 +26,7 @@ class CurrencyService {
       return response.body;
     } else {
       log('Fail: Code: ${response.statusCode}: ${response.body}');
+      throw Exception('Fail: Code: ${response.statusCode}: ${response.body}');
     }
   }
 
